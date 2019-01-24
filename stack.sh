@@ -8,7 +8,8 @@
 							sudo mkdir /root/ansible
 							cd /root/ansible
 							sudo git clone https://github.com/saipavwan/deployment.git
-              cd /root/ansible/deployment/tomcat
+							chmod 777 tomcat
+                                                        cd /root/ansible/deployment/tomcat
 							sudo ansible-playbook site.yml
 							cd /usr/share/tomcat/bin
 							./shutdown.sh
