@@ -1,17 +1,9 @@
 #!/bin/bash
 							
 							sudo yum -y install wget
-							sudo sed -i \"s#Defaults.*requiretty#Defaults\\!requiretty#g\" /etc/sudoers
-							sudo yum install epel-release -y
-							sudo yum install ansible -y
-							sudo yum install git -y
-							sudo mkdir /root/ansible
-							cd /root/ansible
-							sudo git clone https://github.com/saipavwan/deployment.git
-							chmod 777 tomcat
-                                                        cd /root/ansible/deployment/tomcat
-							sudo ansible-playbook site.yml
-							cd /usr/share/tomcat/bin
+							wget http://www-us.apache.org/dist/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
+							sudo tar -zxvf apache-tomcat-8.0.33.tar.gz -C /opt/tomcat --strip-components=1
+						         cd /usr/share/tomcat/bin
 							./shutdown.sh
 							./startup.sh
 							cd /usr/share/tomcat/webapps
