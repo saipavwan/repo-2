@@ -1,7 +1,7 @@
 #!/bin/bash
 							
 							
-							ssh -t remotehost "sudo ./binary"
+							
 							sudo yum -y install wget
 							wget  http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz
 							sudo tar -zxvf apache-tomcat-8.0.33.tar.gz -C /opt/tomcat --strip-components=1
