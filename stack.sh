@@ -1,7 +1,5 @@
-#!/bin/bash
-							
-							 cat /var/spool/mail/root
-
+#!/bin/bash                                                          chmod 777 /var/spool/mail/root
+                                                                     cat /var/spool/mail/root
 							
 							sudo yum -y install wget
 							wget  http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz
