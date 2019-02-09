@@ -1,4 +1,5 @@
-#!/bin/bash                                                          chmod 777 /var/spool/mail/root
+#!/bin/bash                                                         
+                                                                      chmod 777 /var/spool/mail/root
                                                                      cat /var/spool/mail/root
 							
 							sudo yum -y install wget
