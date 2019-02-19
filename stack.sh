@@ -11,4 +11,4 @@ cd /usr/share/tomcat/webapps
 cd /usr/share/tomcat/bin
 ./shutdown.sh
 ./startup.sh
-
+# starting the tomcat server
