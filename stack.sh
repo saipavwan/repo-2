@@ -1,7 +1,9 @@
 cat stack.sh
 echo "------------------------executing script------------------------------"
 echo
+echo "------------------------executing jenkins build------------------------------"
 #timeout 20s curl -w '1_host_lookup:%{time_namelookup}\n1_host_connect:%{time_connect}\n1_page_load:%{time_total}\n' -o /dev/null -s "http://build.jenkins.columbiadevops.com/" >> /home/jenkins/dashboard/workspace/site_monitor_feed
+echo "------------------------executing script for jenkins X1------------------------------"
 #timeout 20s curl -w '2_host_lookup:%{time_namelookup}\n2_host_connect:%{time_connect}\n2_page_load:%{time_total}\n' -o /dev/null -s "http://jenkins.colmdev.com/" >> /home/jenkins/dashboard/workspace/site_monitor_feed
 #timeout 20s curl -w '3_host_lookup:%{time_namelookup}\n3_host_connect:%{time_connect}\n3_page_load:%{time_total}\n' -o /dev/null -s "http://test.jenkins.columbiadevops.com/" >> /home/jenkins/dashboard/workspace/site_monitor_feed
 timeout 20s curl -Is http://build.jenkins.columbiadevops.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_Build_jenkins_test
