@@ -8,7 +8,7 @@ chmod 777 site_X1_jenkins_test
 timeout 20s curl -Is http://jenkins.colmdev.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_X1_jenkins_test
 chmod 777 site_test_jenkins_test
 timeout 20s curl -Is http://test.jenkins.columbiadevops.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_test_jenkins_test
-echo "------------------------executing script for TEST ------------------------------"
+echo "------------------------executing script for TEST -------------------------------"
 #cd /home/jenkins/dashboard/workspace
 #rm /home/jenkins/dashboard/workspace/sites-monitor.html
 #cp /home/jenkins/dashboard/workspace/sites-monitor.html.tmpl /home/jenkins/dashboard/workspace/sites-monitor.html
