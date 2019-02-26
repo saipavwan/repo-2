@@ -1,11 +1,10 @@
-cat stack.sh
 echo "------------------------executing script------------------------------"
 echo
 echo "------------------------executing jenkins build------------------------------"
 timeout 20s curl -Is http://build.jenkins.columbiadevops.com/ | head -n 1 > chmod 777 /home/jenkins/dashboard/workspace/site_Build_jenkins_test
-chmod 777 site_X1_jenkins_test
+
 timeout 20s curl -Is http://jenkins.colmdev.com/ | head -n 1 > chmod 777 /home/jenkins/dashboard/workspace/site_X1_jenkins_test
-chmod 777 site_test_jenkins_test
+
 timeout 20s curl -Is http://test.jenkins.columbiadevops.com/ | head -n 1 > chmod 777 /home/jenkins/dashboard/workspace/site_test_jenkins_test
 #cd /home/jenkins/dashboard/workspace
 #rm /home/jenkins/dashboard/workspace/sites-monitor.html
