@@ -2,13 +2,11 @@ cat stack.sh
 echo "------------------------executing script------------------------------"
 echo
 echo "------------------------executing jenkins build------------------------------"
-#timeout 20s curl -w '1_host_lookup:%{time_namelookup}\n1_host_connect:%{time_connect}\n1_page_load:%{time_total}\n' -o /dev/null -s "http://build.jenkins.columbiadevops.com/" >> /home/jenkins/dashboard/workspace/site_monitor_feed
-echo "------------------------executing script for jenkins X1------------------------------"
-#timeout 20s curl -w '2_host_lookup:%{time_namelookup}\n2_host_connect:%{time_connect}\n2_page_load:%{time_total}\n' -o /dev/null -s "http://jenkins.colmdev.com/" >> /home/jenkins/dashboard/workspace/site_monitor_feed
-echo "------------------------executing script for TEST jenkins ------------------------------"
-#timeout 20s curl -w '3_host_lookup:%{time_namelookup}\n3_host_connect:%{time_connect}\n3_page_load:%{time_total}\n' -o /dev/null -s "http://test.jenkins.columbiadevops.com/" >> /home/jenkins/dashboard/workspace/site_monitor_feed
+chmod 777 site_Build_jenkins_test
 timeout 20s curl -Is http://build.jenkins.columbiadevops.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_Build_jenkins_test
+chmod 777 site_X1_jenkins_test
 timeout 20s curl -Is http://jenkins.colmdev.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_X1_jenkins_test
+chmod 777 site_test_jenkins_test
 timeout 20s curl -Is http://test.jenkins.columbiadevops.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_test_jenkins_test
 #cd /home/jenkins/dashboard/workspace
 #rm /home/jenkins/dashboard/workspace/sites-monitor.html
@@ -45,7 +43,7 @@ else
 sed -i "s/3_yet_to_update/Test_DOWN/" /home/jenkins/dashboard/workspace/sites-monitor.html
 #email here
 echo "TEST Jenkins was DOWN" | mailx -s "This Email Will Trigger Automatically" -a /var/www/html/sites-monitor.html pavan.sai@columbia.com
-
+echo ": "---------------------"
 fi
 #Feed for Build Jenkins
 for i in `cut -d':' -f1 /home/jenkins/dashboard/workspace/site_monitor_feed`
