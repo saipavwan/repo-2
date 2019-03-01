@@ -23,7 +23,7 @@ then
 #echo "checked the value for X1 jenkkins"
 #sed -i "s/1_yet_to_update/Builld_DOWN/" /home/jenkins/dashboard/workspace/sites-monitor.html
 #email here
-echo "Build Jenkins was DOWN" | mailx -s "This Email will Trigger Automatically" -a pavan.sai@columbia.com
+echo "Build Jenkins was DOWN" | mailx -s "This Email will Trigger Automatically" pavan.sai@columbia.com
 fi
 #X1 Jenkins
 if [[ `grep "200 OK" site_X1_jenkins_test` ]]
@@ -32,7 +32,7 @@ then
 #else
 #sed -i "s/2_yet_to_update/X1_DOWN/" /home/jenkins/dashboard/workspace/sites-monitor.html
 #email here
-echo "X1 Jenkins was DOWN" | mailx -s "This Email Will Trigger Automatically" -a /var/www/html/sites-monitor.html pavan.sai@columbia.com
+echo "X1 Jenkins was DOWN" | mailx -s "This Email Will Trigger Automatically" pavan.sai@columbia.com
 fi
 #Test Jenkins
 if [[ `grep "200 OK" site_test_jenkins_test` ]]
@@ -41,7 +41,7 @@ then
 #else
 #sed -i "s/3_yet_to_update/Test_DOWN/" /home/jenkins/dashboard/workspace/sites-monitor.html
 #email here
-echo "TEST Jenkins was DOWN" | mailx -s "This Email Will Trigger Automatically" -a /var/www/html/sites-monitor.html pavan.sai@columbia.com
+echo "TEST Jenkins was DOWN" | mailx -s "This Email Will Trigger Automatically" pavan.sai@columbia.com
 echo ": "---------------------"
 fi
 #Feed for Build Jenkins
