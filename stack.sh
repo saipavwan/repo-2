@@ -2,9 +2,9 @@ echo "------------------------executing script------------------------------"
 echo
 echo "------------------------executing jenkins build------------------------------"
 umask 0002
-timeout 20s curl -Is http://build.jenkins.columbiadevops.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_Build_jenkins_test
+timeout 20s curl -Is http://build.jenkins.columbiadevops.com/ | head -n 1 > -o /home/jenkins/dashboard/workspace/site_Build_jenkins_test
 
-timeout 20s curl -Is http://jenkins.colmdev.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_X1_jenkins_test
+timeout 20s curl -Is http://jenkins.colmdev.com/ | head -n 1 > -o /home/jenkins/dashboard/workspace/site_X1_jenkins_test
 
 timeout 20s curl -Is http://test.jenkins.columbiadevops.com/ | head -n 1 > /home/jenkins/dashboard/workspace/site_test_jenkins_test
 #cd /home/jenkins/dashboard/workspace
