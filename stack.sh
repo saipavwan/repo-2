@@ -1,7 +1,6 @@
 echo "------------------------executing script------------------------------"
 echo
 echo "------------------------executing jenkins build------------------------------"
-umask 0002
 timeout 20s curl -INs http://build.jenkins.columbiadevops.com/ | head -n 1 >> site_Build_jenkins_test
 chmod 777 site_Build_jenkins_test
 timeout 20s curl -INs http://jenkins.colmdev.com/ | head -n 1 >>  site_X1_jenkins_test
